@@ -1,4 +1,3 @@
-import express from "express"
 import  uploadImages from "../controllers/imageController.js";
 import { Router } from "express";
 
