@@ -27,7 +27,7 @@ const ImageUpdate = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/images');
+                const { data } = await axios.get('https://backend-procohat.vercel.app/api/images');
                 setUploadedImages(data.images); // Assuming the endpoint returns image URLs
             } catch (error) {
                 console.error('Error fetching images:', error);
