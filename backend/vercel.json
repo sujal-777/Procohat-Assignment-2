@@ -1,21 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/server.js"
-      }
-    ],
-    "env": {
-      "CLOUDINARY_CLOUD_NAME": "dfyhlkyfe",
-      "CLOUDINARY_API_KEY": "872985568466934",
-      "CLOUDINARY_API_SECRET": "PWieeq9RjK66281Hut6fmOiq3NQ"
+  "installCommand" : "npm install --legacy-peer-deps",
+  "version":2,
+  "builds" : [
+    {
+      "src" : "server.js",
+      "use" : "@vercel/node"
+    },
+    {
+      "src" : "src/**/**",
+      "use" : "@vercel/static"
     }
-  }
-  
+
+  ],
+  "routes" : [
+    {"src" : "/(.*)", "dest" : "/"}
+  ]
+}
