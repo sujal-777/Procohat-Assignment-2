@@ -14,7 +14,7 @@ const ImageUpdate = () => {
         Array.from(images).forEach((image) => formData.append('images', image));
 
         try {
-            const { data } = await axios.post('http://localhost:4000/api/images/upload', formData, {
+            const { data } = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/images/upload`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             setUploadedImages(data.images);  // Set the image URLs after upload
@@ -27,7 +27,7 @@ const ImageUpdate = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const { data } = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/images`);
+                const { data } = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/images`);
                 setUploadedImages(data.images); // Assuming the endpoint returns image URLs
             } catch (error) {
                 console.error('Error fetching images:', error);
